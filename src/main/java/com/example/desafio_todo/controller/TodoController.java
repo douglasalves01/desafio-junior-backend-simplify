@@ -33,4 +33,10 @@ public class TodoController {
         todoService.excluir(idTodo);
         return ResponseEntity.ok("Exclusão bem sucedida");
     }
+    @PutMapping(value = "/alterar/{id}")
+    public ResponseEntity<TodoEntity> atualizar(@PathVariable("id") String todoId,
+                                                @RequestBody TodoEntity todoAtualizado) {
+        TodoEntity todoAtualizadoResponse = todoService.atualizar(todoId, todoAtualizado);
+        return ResponseEntity.ok(todoAtualizadoResponse);
+    }
 }
