@@ -27,4 +27,10 @@ public class TodoController {
         List<TodoEntity> todos = todoService.buscar();
         return ResponseEntity.ok(todos);
     }
+
+    @DeleteMapping(value = "/excluir/{id}")
+    public ResponseEntity<String> excluir(@PathVariable("id") String idTodo){
+        todoService.excluir(idTodo);
+        return ResponseEntity.ok("Exclusão bem sucedida");
+    }
 }

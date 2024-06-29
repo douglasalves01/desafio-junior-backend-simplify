@@ -22,4 +22,8 @@ public class TodoService {
         return todoRepository.findAll();
     }
 
+    public void excluir(String id){
+        todoRepository.deleteById(id);
+    }
+
 }
